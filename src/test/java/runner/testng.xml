@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="API Test Suite" verbose="1" parallel="false">
+    <test name="Reqres Dibimbing Tests">
+        <classes>
+            <class name="tests.auth.LoginTest"/>
+            <class name="tests.reqres.GetUserByIdTest"/>
+            <class name="tests.reqres.GetUsersTest"/>
+<!--            <class name="tests.reqres.PatchUserByIdTest"/>-->
+        </classes>
+    </test>
+</suite>

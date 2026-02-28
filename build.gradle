@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    testImplementation 'org.hamcrest:hamcrest:2.2'
+    testImplementation 'com.fasterxml.jackson.core:jackson-databind:2.18.0'
+    testImplementation 'io.rest-assured:rest-assured:5.3.1'
+    implementation 'org.json:json:20230227'
+    implementation 'org.apache.poi:poi:5.2.3'
+    implementation 'org.apache.poi:poi-ooxml:5.2.3'
+    testImplementation 'org.testng:testng:7.10.2'
+}
+
+test {
+    useTestNG {
+        // arahkan ke file testng.xml sesuai lokasi
+        suites 'src/test/java/runner/testng.xml'
+    }
+
+    testLogging {
+        showStandardStreams = true    // tampilkan log test di console
+        events "passed", "skipped", "failed" // tampilkan event penting
+    }
+}
